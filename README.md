@@ -7,11 +7,11 @@
 ### get_weather_data.py :
 * contains methods that request Noaa Databae to get weather related data
 
-### /Disease :
+### src/Disease :
 * files that leverage and process get_weather_data.py to compute disease/parasite risk thanks to scientific agronomy formula
 
-### /GrowthIndicators
+### src/GrowthIndicators
 * files that leverage and process get_weather_data.py to compute plant's key index thanks to scientific agronomy formula
 
-### /ML_Forecating_SolarRadiation
+### src/ML_Forecating_SolarRadiation
 * Jupyter Notebook used to train the forecasting Solar Radiation model
