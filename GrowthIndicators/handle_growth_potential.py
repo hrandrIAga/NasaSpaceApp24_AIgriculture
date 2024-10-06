@@ -26,7 +26,7 @@ def calculate_growth_potential(temp, plant_type):
     
     return math.exp(-0.5 * ((temp - t0) / var) ** 2)
 
-def getGrowthPotential24h(zipcode, country, date, plant_type):
+def get_growth_potential24h(zipcode, country, date, plant_type):
     start_date = datetime.strptime(date, '%Y-%m-%d')
     end_date = start_date + timedelta(days=1)
     
@@ -41,7 +41,7 @@ def getGrowthPotential24h(zipcode, country, date, plant_type):
     
     return json.dumps(gp_values)
 
-def getGrowthPotentialDay(zipcode, country, date, plant_type):
+def get_growth_potential_day(zipcode, country, date, plant_type):
     start_date = datetime.strptime(date, '%Y-%m-%d')
     end_date = start_date + timedelta(days=1)
     
@@ -53,9 +53,3 @@ def getGrowthPotentialDay(zipcode, country, date, plant_type):
     gp_values = {str(date): round(gp, 4) for date, gp in daily_gp.items()}
     
     return json.dumps(gp_values)
-
-# For debugging: print the Python path
-print(sys.path)
-
-# For debugging: print the contents of the parent directory
-print(os.listdir(parent_dir))

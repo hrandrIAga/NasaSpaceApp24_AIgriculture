@@ -6,7 +6,7 @@ import argparse
 # Add the current directory to the Python path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from HandleGrowthIndicators.handle_gdd import get_gdd_daily, get_gdd_cumulative
+from GrowthIndicators.handle_gdd import get_gdd_daily, get_gdd_cumulative
 
 def main():
     parser = argparse.ArgumentParser(description='Calculate Growing Degree Days (GDD) for plants.')
