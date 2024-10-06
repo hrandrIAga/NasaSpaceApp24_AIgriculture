@@ -28,7 +28,7 @@ def calculate_growth_potential(temp, plant_type):
 
 def get_growth_potential24h(zipcode, country, date, plant_type):
     start_date = datetime.strptime(date, '%Y-%m-%d')
-    end_date = start_date + timedelta(days=1)
+    end_date = start_date
     
     df = get_weather_data(zipcode, country, start_date, end_date)
     
@@ -43,7 +43,7 @@ def get_growth_potential24h(zipcode, country, date, plant_type):
 
 def get_growth_potential_day(zipcode, country, date, plant_type):
     start_date = datetime.strptime(date, '%Y-%m-%d')
-    end_date = start_date + timedelta(days=1)
+    end_date = start_date
     
     df = get_weather_data(zipcode, country, start_date, end_date)
     

@@ -1,4 +1,5 @@
-# /home/hagamaya/Desktop/NasaSpaceApp24/run_gdd.py
+# /home/hagamaya/Desktop/NasaSpaceApp24/run_growth_potential.py
+
 import sys
 import os
 import argparse
@@ -6,11 +7,11 @@ import argparse
 # Add the current directory to the Python path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from HandleGrowthIndicators.handle_gdd import get_gdd_daily, get_gdd_cumulative
+from GrowthIndicators.handle_growth_potential import get_growth_potential24h, get_growth_potential_day
 
 def main():
-    parser = argparse.ArgumentParser(description='Calculate Growing Degree Days (GDD) for plants.')
-    parser.add_argument('function', choices=['daily', 'cumulative'], help='Choose between daily or cumulative GDD calculation')
+    parser = argparse.ArgumentParser(description='Calculate growth potential for plants.')
+    parser.add_argument('function', choices=['24h', 'day'], help='Choose between 24-hour or daily growth potential')
     parser.add_argument('zipcode', help='Zipcode of the location')
     parser.add_argument('country', help='Country code (e.g., US)')
     parser.add_argument('date', help='Date in YYYY-MM-DD format')
@@ -18,10 +19,10 @@ def main():
 
     args = parser.parse_args()
 
-    if args.function == 'daily':
-        result = get_gdd_daily(args.zipcode, args.country, args.date, args.plant_type)
-    else:  # cumulative
-        result = get_gdd_cumulative(args.zipcode, args.country, args.date, args.plant_type)
+    if args.function == '24h':
+        result = get_growth_potential24h(args.zipcode, args.country, args.date, args.plant_type)
+    else:
+        result = get_growth_potential_day(args.zipcode, args.country, args.date, args.plant_type)
 
     print(result)
 
